@@ -1,0 +1,308 @@
+.wrapper {
+  max-width: 1028px;
+  margin: 0px auto; }
+
+.mdl_shadow {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+
+.mdl_shadow:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+
+.dropdown {
+  display: inline-block; }
+
+.dropdown__content {
+  display: none;
+  position: absolute; }
+
+.dropdown--active .dropdown__content {
+  display: block; }
+
+input.int_comp {
+  background: transparent;
+  padding: 8px 16px;
+  font-size: 16px;
+  border: 1px solid #EEE; }
+
+.login_modal {
+  padding: 20px;
+  background: #FFF;
+  border: 2px solid red; }
+
+.new_campaign {
+  background: #FFF;
+  padding: 40px 0px;
+  padding-top: 100px;
+  position: relative;
+  top: -80px; }
+  .new_campaign:before {
+    content: "";
+    background: yellow;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 500px; }
+
+body {
+  background: #EEE; }
+
+* {
+  box-sizing: border-box; }
+
+.app_header {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,7db9e8+100&0.46+0,0+100 */
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.46) 0%, rgba(125, 185, 232, 0) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.46) 0%, rgba(125, 185, 232, 0) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.46) 0%, rgba(125, 185, 232, 0) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#75000000', endColorstr='#007db9e8',GradientType=0 );
+  /* IE6-9 */
+  position: relative;
+  z-index: 10; }
+  .app_header .root {
+    display: flex;
+    padding: 10px 0px; }
+    .app_header .root .logo_wrap {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center; }
+      .app_header .root .logo_wrap a {
+        text-decoration: none;
+        font-weight: bold; }
+      .app_header .root .logo_wrap span.logo_text {
+        font-size: 30px;
+        font-weight: bold;
+        color: #FFF;
+        background: rgba(255, 127, 80, 0.4);
+        padding: 8px 16px;
+        border: 2px solid #ff7f50;
+        position: relative; }
+    .app_header .root nav {
+      display: inline-flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex: 1;
+      text-align: right; }
+      .app_header .root nav a {
+        padding: 0px 20px;
+        text-decoration: none;
+        color: #FFF;
+        font-weight: bold; }
+      .app_header .root nav button.btn_join {
+        padding: 12px 20px; }
+      .app_header .root nav .btn_create {
+        background: transparent;
+        border-radius: 20px;
+        padding: 8px 16px;
+        border: 2px solid #FFF;
+        color: #FFF;
+        font-weight: bold;
+        font-size: 16px;
+        transition-duration: 0.2s;
+        cursor: pointer;
+        outline: none; }
+        .app_header .root nav .btn_create:hover {
+          border-color: #ff7f50;
+          color: #ff7f50; }
+      .app_header .root nav .logged_user {
+        display: inline-flex; }
+        .app_header .root nav .logged_user img {
+          max-width: 50px;
+          border-radius: 50%;
+          margin-right: 10px; }
+      .app_header .root nav .dropdown {
+        position: relative; }
+        .app_header .root nav .dropdown .dropdown__trigger {
+          padding: 0px !important; }
+        .app_header .root nav .dropdown .dropdown__content {
+          position: absolute;
+          top: 60px;
+          width: 100%;
+          left: 0px;
+          right: 0px; }
+          .app_header .root nav .dropdown .dropdown__content ul {
+            margin: 0px;
+            padding: 0px;
+            text-align: left;
+            border: 1px solid #EEE; }
+            .app_header .root nav .dropdown .dropdown__content ul li {
+              list-style: none;
+              border-bottom: 1px solid #EEE;
+              background: #FFF;
+              padding: 4px 10px; }
+              .app_header .root nav .dropdown .dropdown__content ul li a {
+                color: #333;
+                font-weight: normal; }
+
+.home {
+  position: relative;
+  top: -84px; }
+  .home .main_bg {
+    position: relative;
+    background: url("./../../imgs/bgs/4.jpg") center no-repeat;
+    background-size: cover;
+    height: 100vh; }
+    .home .main_bg .root {
+      padding-top: 100px;
+      color: #FFF; }
+      .home .main_bg .root .hero_text {
+        font-size: 40px;
+        text-align: center;
+        color: #FFF;
+        max-width: 500px;
+        margin: 0px auto;
+        margin-top: 100px;
+        margin-bottom: 70px;
+        text-shadow: 0px 0px 10px 20px rgba(0, 0, 0, 0.3); }
+  .home .popular_listing_wrap,
+  .home .new_listing_wrap,
+  .home footer.app_footer {
+    position: relative;
+    top: -100px;
+    margin-bottom: 40px; }
+
+.popular_listing {
+  background: #FFF;
+  padding: 20px; }
+  .popular_listing .listing {
+    display: flex;
+    flex-wrap: wrap; }
+    .popular_listing .listing .item {
+      display: flex;
+      flex: 1 48%;
+      border: 1px solid #EEE;
+      margin-top: 20px;
+      cursor: pointer; }
+      .popular_listing .listing .item:nth-child(odd) {
+        margin-right: 2%; }
+      .popular_listing .listing .item .img_wrap {
+        max-width: 220px; }
+        .popular_listing .listing .item .img_wrap img {
+          width: 100%; }
+      .popular_listing .listing .item .desc_wrap {
+        flex: 1;
+        padding: 20px;
+        position: relative; }
+        .popular_listing .listing .item .desc_wrap h4 {
+          margin: 0px;
+          padding: 0px;
+          margin-bottom: 8px; }
+        .popular_listing .listing .item .desc_wrap p {
+          padding: 0px;
+          margin: 0px; }
+        .popular_listing .listing .item .desc_wrap button {
+          margin-top: 15px;
+          width: 100%;
+          padding: 8px 16px; }
+        .popular_listing .listing .item .desc_wrap .join_wrap {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          color: #999;
+          font-size: 12px; }
+          .popular_listing .listing .item .desc_wrap .join_wrap span:nth-child(1) {
+            font-size: 16px; }
+
+.search_wrap {
+  display: flex;
+  max-width: 600px;
+  margin: 0px auto;
+  align-items: flex-start;
+  background: yellow;
+  height: 55px; }
+  .search_wrap.simple_input {
+    margin: 0px; }
+  .search_wrap .react-autosuggest__container {
+    position: relative;
+    z-index: 15;
+    flex: 1;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); }
+    .search_wrap .react-autosuggest__container input {
+      padding: 16px 20px;
+      border: 1px solid #EEE;
+      font-size: 18px;
+      color: #444;
+      width: 100%;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px; }
+    .search_wrap .react-autosuggest__container ul {
+      padding: 0px;
+      margin: 0px; }
+      .search_wrap .react-autosuggest__container ul li {
+        background: #FFF;
+        list-style: none;
+        color: #333;
+        padding: 8px 16px;
+        border-bottom: 1px solid #EEE; }
+        .search_wrap .react-autosuggest__container ul li:hover {
+          background: #EEE;
+          cursor: pointer; }
+  .search_wrap button {
+    width: 120px;
+    height: 55px;
+    font-size: 18px;
+    color: #FFF;
+    background: #2f3542;
+    border: none;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px; }
+
+.new_campaign {
+  padding: 40px 0px;
+  padding-top: 100px;
+  position: relative;
+  background: transparent;
+  top: -80px; }
+  .new_campaign:before {
+    content: "";
+    background: red;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 300px;
+    z-index: -1; }
+  .new_campaign .main_form {
+    background: #FFF;
+    padding: 20px;
+    border: 1px solid #EEE;
+    margin-top: 20px;
+    max-width: 700px; }
+    .new_campaign .main_form .row {
+      display: flex;
+      margin-bottom: 20px; }
+      .new_campaign .main_form .row.column {
+        flex-direction: column; }
+      .new_campaign .main_form .row > label {
+        color: #222;
+        margin-bottom: 10px; }
+      .new_campaign .main_form .row > input {
+        padding: 8px 16px;
+        border: none;
+        border-bottom: 2px solid #CCC;
+        font-size: 16px;
+        outline: none;
+        max-width: 400px; }
+        .new_campaign .main_form .row > input:active, .new_campaign .main_form .row > input:focus {
+          border-bottom: 2px solid #ff7f50; }
+      .new_campaign .main_form .row.half > div {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        margin-right: 30px; }
+        .new_campaign .main_form .row.half > div .react-date-picker__button {
+          width: 100%;
+          max-width: 250px;
+          border: none;
+          border-bottom: 2px solid #CCC;
+          margin-top: 10px; }
+          .new_campaign .main_form .row.half > div .react-date-picker__button:focus {
+            border-bottom: 2px solid #ff7f50; }
+
+footer.app_footer .root {
+  display: flex;
+  flex: 1 25%; }
