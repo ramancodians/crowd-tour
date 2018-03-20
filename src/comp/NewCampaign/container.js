@@ -1,10 +1,15 @@
 import { bindActionCreators } from "redux"
 import { connect } from "react-redux"
 import * as NewCampaignActions from "./actions"
+import { getUserData } from "./../utils/user"
 
 function mapStateToProps(state){
+
+  const { creatingCampaign, campaignCreated } = state.newCampaign
   return {
-    newCampaign: "asdadad adasd",
+    user: getUserData(state),
+    creatingCampaign,
+    campaignCreated,
   }
 }
 

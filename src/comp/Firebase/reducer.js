@@ -4,19 +4,17 @@ const initState = {}
 
 export default function firebaseReducer(state = initState, action){
   switch (action.type) {
-    case FirebaseActions.USER_LOGGED: {
+    case FirebaseActions.USER_LOGGED:
       return {
         ...state,
-        user: action.user
+        user: action.user,
       }
-    }
 
-    case FirebaseActions.USER_LOGGEDOUT: {
+    case FirebaseActions.USER_LOGGEDOUT:
       return {
         ...state,
         user: null
       }
-    }
     default:
       return state
   }

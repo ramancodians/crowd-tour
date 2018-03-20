@@ -38,14 +38,12 @@ class Header extends React.Component{
   }
 
   render(){
-    console.log(this.props);
     const { visible } = this.state
     const {
       userLogged,
       userLoggedOut,
       user,
     } = this.props
-    console.log(this.props);
     return(
       <header className="app_header">
         <LoginModal

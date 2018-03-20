@@ -1,3 +1,15 @@
 export function getUserData(state) {
-  console.log("user data", state);
+  const { user } = state.firebase || {}
+  const {
+    displayName,
+    email,
+    photoURL,
+    uid,
+  } = user || {}
+  return {
+    displayName,
+    email,
+    photoURL,
+    uid,
+  }
 }

@@ -25,7 +25,7 @@ export default class Examples extends Component {
   loginWithGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth()
-    .setPersistence(firebase.auth.Auth.Persistence.SESSION)
+    .setPersistence(firebase.auth.Auth.Persistence.LOCAL)
     .then(() => {
       return firebase.auth().signInWithPopup(provider)
       .then((result) => {
@@ -43,7 +43,7 @@ export default class Examples extends Component {
   render() {
 
     if(!this.props.visible) return null
-        
+
     return (
       <Modal
         visible={this.props.visible}

@@ -4,7 +4,14 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-console.log("hellow asdasd");
+const RootEle = document.getElementById('root')
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, RootEle);
 registerServiceWorker();
+
+if (module.hot) {
+  module.hot.accept('./App', () => {
+    const NextApp = require('./App').default
+    ReactDOM.render(<NextApp />, RootEle )
+  })
+}

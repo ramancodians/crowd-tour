@@ -1,17 +1,19 @@
 import { bindActionCreators } from "redux"
 import { connect } from "react-redux"
-import * as HomeActions from "./actions"
+import {
+  getCampaigns
+} from "./actions"
 
 function mapStateToProps(state){
   return {
-    homeState: "asdadad adasd",
+    ...state,
   }
 }
 
 function mapDispatchToProps(dispatch){
   return {
     ...bindActionCreators({
-      ...HomeActions,
+      getCampaigns,
     },dispatch)
   }
 }

@@ -9,9 +9,20 @@ class HomePage extends Component{
 
   state = {}
 
+  componentWillMount(){
+    this.props.getCampaigns()
+  }
+
+  handleLocationPhoto = (dataURL) => {
+    this.setState({
+      locationImage: dataURL
+    })
+  }
+
   render(){
     console.log(this.props);
-    const { searchLocations } = this.props
+    const { searchLocations, home } = this.props
+    const { locationImage } = this.state
     return(
       <div className="page home">
         <div className="main_bg">
@@ -20,17 +31,19 @@ class HomePage extends Component{
               <div>
                 <h1 className="hero_text">Where travellers make travel plan not agency</h1>
                 <SearchBox
+                  handleLocationPhoto={this.handleLocationPhoto}
                   handleSearchSubmit={searchLocations}
                   shadow
                   placeholder="Where your heart wants to go?"
                 />
+                { locationImage && <img src={locationImage} alt=""/> }
               </div>
             </div>
           </div>
         </div>
         <div className="popular_listing_wrap">
           <div className="wrapper">
-            <PopularListing />
+            <PopularListing campaigns={home.campaigns || []}/>
           </div>
         </div>
         <div className="new_listing_wrap">

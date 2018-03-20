@@ -1,9 +1,10 @@
 import {
-  SEARCH_LOCATIONS
+  SEARCH_LOCATIONS,
+  GET_CAMPAIGNS_SUCCESS,
 } from "./consts"
 
 const initState = {
-  
+
 }
 
 export default function homeReducer(state = initState, action){
@@ -11,6 +12,11 @@ export default function homeReducer(state = initState, action){
     case SEARCH_LOCATIONS:
       return {
         ...state,
+      }
+    case GET_CAMPAIGNS_SUCCESS:
+      return {
+        ...state,
+        campaigns: action.res
       }
     default:
       return state

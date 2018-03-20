@@ -1,6 +1,7 @@
 {
   "name": "crowdtour",
   "version": "0.1.0",
+  "homepage": "https://projectm-9ef16.firebaseapp.com",
   "private": true,
   "dependencies": {
     "classnames": "^2.2.5",
@@ -24,8 +25,8 @@
     "redux-saga": "^0.16.0"
   },
   "scripts": {
-    "build-css": "node-sass-chokidar src/styles -o src/styles",
-    "watch-css": "npm run build-css && node-sass-chokidar src/styles -o src/styles --watch --recursive",
+    "build-css": "node-sass-chokidar src/styles/scss -o src/styles/css",
+    "watch-css": "npm run build-css && node-sass-chokidar src/styles/scss -o src/styles/css --watch --recursive",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "build-js": "react-scripts build",
@@ -36,7 +37,6 @@
   },
   "devDependencies": {
     "node-sass": "^4.7.2",
-    "npm-run-all": "^4.1.2",
     "webpack-dev-server": "^3.0.0"
   }
 }
