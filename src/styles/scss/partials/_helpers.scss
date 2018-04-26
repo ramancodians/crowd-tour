@@ -73,3 +73,61 @@ input.int_comp{
     margin-left: 10px;
   }
 }
+
+.form_controls_wrap{
+  &.error{
+    border-bottom: 2px solid red;
+  }
+}
+
+.form_controls_wrap{
+  position: relative;
+  padding-top: 20px;
+  margin-top: 20px;
+
+  &.focused{
+    .bar{
+      width: 100%;
+    }
+    label{
+      top: 5px;
+      font-size: 10px;
+      color: #999;
+    }
+  }
+
+  &.filled{
+    label{
+      top: 5px;
+      font-size: 10px;
+      color: #999;
+    }
+  }
+  label{
+    position: absolute;
+    top: 22px;
+    left: 0px;
+    transition-duration: 0.4s;
+    pointer-events: none;
+  }
+  input{
+    width: 100%;
+    font-size: 18px;
+    border: none;
+    background: transparent;
+    outline: none;
+    border-bottom: 1px solid #CCC;
+    padding: 0px;
+    margin-top: 5px;
+  }
+  .bar{
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: blue;
+    transition-duration: 0.4s;
+    bottom: 0px;
+    left: 0px;
+    border: 1px;
+  }
+}

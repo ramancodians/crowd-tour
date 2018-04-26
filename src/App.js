@@ -7,6 +7,7 @@ import HomePage from "./comp/Home"
 import CampaignPage from "./comp/Campaign"
 import SuccessPage from "./comp/Success"
 import NewCampaignPage from "./comp/NewCampaign"
+import ProfilePage from "./comp/Profile"
 import Firebase from "./comp/Firebase"
 import { Provider } from "react-redux"
 import "./styles/css/main.css"
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/campaign/:id/:desc" component={CampaignPage} />
           <Route exact path="/campaign/new" component={NewCampaignPage} />
           <Route path="/success" component={SuccessPage} />
+          <Route path="/profile" component={ProfilePage} />
         <Footer />
       </div>
     </BrowserRouter>

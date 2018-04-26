@@ -55,10 +55,54 @@ input.int_comp {
   .user_info_wrap span {
     margin-left: 10px; }
 
+.form_controls_wrap.error {
+  border-bottom: 2px solid red; }
+
+.form_controls_wrap {
+  position: relative;
+  padding-top: 20px;
+  margin-top: 20px; }
+  .form_controls_wrap.focused .bar {
+    width: 100%; }
+  .form_controls_wrap.focused label {
+    top: 5px;
+    font-size: 10px;
+    color: #999; }
+  .form_controls_wrap.filled label {
+    top: 5px;
+    font-size: 10px;
+    color: #999; }
+  .form_controls_wrap label {
+    position: absolute;
+    top: 22px;
+    left: 0px;
+    transition-duration: 0.4s;
+    pointer-events: none; }
+  .form_controls_wrap input {
+    width: 100%;
+    font-size: 18px;
+    border: none;
+    background: transparent;
+    outline: none;
+    border-bottom: 1px solid #CCC;
+    padding: 0px;
+    margin-top: 5px; }
+  .form_controls_wrap .bar {
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: blue;
+    transition-duration: 0.4s;
+    bottom: 0px;
+    left: 0px;
+    border: 1px; }
+
 .login_modal {
   padding: 20px;
   background: #FFF;
-  border: 2px solid red; }
+  width: 100%;
+  display: block;
+  background: yellow; }
 
 .new_campaign {
   background: #FFF;
@@ -74,6 +118,47 @@ input.int_comp {
     left: 0px;
     width: 100%;
     height: 500px; }
+
+.profile .wrapper {
+  display: flex; }
+  .profile .wrapper .modal_creator {
+    background: #FFF;
+    padding: 20px;
+    border-radius: 4px;
+    flex: 1; }
+    .profile .wrapper .modal_creator .user_img_wrap {
+      text-align: center; }
+      .profile .wrapper .modal_creator .user_img_wrap .img_holder {
+        border-radius: 50%;
+        display: inline-block;
+        background: #CCC center no-repeat;
+        background-size: cover;
+        width: 140px;
+        height: 140px;
+        border: #CCC 3px solid;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; }
+        .profile .wrapper .modal_creator .user_img_wrap .img_holder:hover {
+          cursor: pointer; }
+          .profile .wrapper .modal_creator .user_img_wrap .img_holder:hover > img, .profile .wrapper .modal_creator .user_img_wrap .img_holder:hover h6 {
+            opacity: 0.6; }
+        .profile .wrapper .modal_creator .user_img_wrap .img_holder > img {
+          width: 40px;
+          height: auto;
+          opacity: 0;
+          transition-duration: 0.3s; }
+        .profile .wrapper .modal_creator .user_img_wrap .img_holder > h6 {
+          opacity: 0;
+          transition-duration: 0.3s;
+          margin: 0px;
+          padding: 0px; }
+        .profile .wrapper .modal_creator .user_img_wrap .img_holder > input {
+          display: none; }
+  .profile .wrapper .preview_wrap {
+    padding: 10px;
+    flex: 1; }
 
 body {
   background: #EEE; }
@@ -175,25 +260,41 @@ body {
     position: relative;
     background: url("./../../imgs/bgs/4.jpg") center no-repeat;
     background-size: cover;
-    height: 100vh; }
+    z-index: 5; }
+    .home .main_bg:after {
+      background: rgba(0, 0, 0, 0.5);
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: -1; }
     .home .main_bg .root {
       padding-top: 100px;
-      color: #FFF; }
+      color: #FFF;
+      padding-bottom: 100px; }
       .home .main_bg .root .hero_text {
-        font-size: 40px;
-        text-align: center;
+        font-size: 50px;
+        font-weight: 100;
         color: #FFF;
-        max-width: 500px;
         margin: 0px auto;
         margin-top: 100px;
-        margin-bottom: 70px;
         text-shadow: 0px 0px 10px 20px rgba(0, 0, 0, 0.3); }
+      .home .main_bg .root p {
+        max-width: 600px;
+        font-size: 20px; }
   .home .popular_listing_wrap,
   .home .new_listing_wrap,
   .home footer.app_footer {
     position: relative;
     top: -100px;
     margin-bottom: 40px; }
+  .home .features .features_wrap {
+    display: flex;
+    padding: 20px 0px; }
+    .home .features .features_wrap .feature {
+      flex: 0 50%; }
 
 .popular_listing {
   background: #FFF;

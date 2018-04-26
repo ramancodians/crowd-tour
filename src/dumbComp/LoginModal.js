@@ -19,7 +19,19 @@ export default class Examples extends Component {
   }
 
   loginWithFB = () => {
-
+    const provider = new firebase.auth.FacebookAuthProvider();
+    firebase.auth()
+    .setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+    .then(() => {
+      return firebase.auth().signInWithPopup(provider)
+      .then((result) => {
+        console.log("success",result);
+        this.props.closeModal()
+      })
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
   }
 
   loginWithGoogle = () => {
@@ -36,8 +48,6 @@ export default class Examples extends Component {
     .catch(function(error) {
       console.log(error);
     });
-
-
   }
 
   render() {
@@ -51,7 +61,7 @@ export default class Examples extends Component {
         onClickAway={() => this.props.closeModal()}
         className="login_modal"
         style={{
-          background: "red"
+          background: "red",
         }}
       >
       <div className="login_modal">

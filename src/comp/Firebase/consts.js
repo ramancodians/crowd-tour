@@ -1,11 +1,11 @@
-export const FIREBASE_CONFIG = {
- apiKey: "AIzaSyAOk7b87qFituhCLtjdlRmQFljfdsU5MxA",
- authDomain: "projectm-9ef16.firebaseapp.com",
- databaseURL: "https://projectm-9ef16.firebaseio.com",
- projectId: "projectm-9ef16",
- storageBucket: "projectm-9ef16.appspot.com",
- messagingSenderId: "530167644408"
-};
+export const FIREBASE_CONFIG =  {
+  apiKey: "AIzaSyDOBj9KeMZ2OE2SdwTXHCffsx0c4AZ-uOA",
+  authDomain: "profile-me-codians.firebaseapp.com",
+  databaseURL: "https://profile-me-codians.firebaseio.com",
+  projectId: "profile-me-codians",
+  storageBucket: "profile-me-codians.appspot.com",
+  messagingSenderId: "306530566014"
+}
 
 export const CONNECTED_TO_FIREBASE = "CONNECTED_TO_FIREBASE"
 export const CONNECTION_TO_FIREBASE_FAILED = "CONNECTION_TO_FIREBASE_FAILED"

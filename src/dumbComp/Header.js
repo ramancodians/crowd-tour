@@ -57,7 +57,7 @@ class Header extends React.Component{
             <div className="logo_wrap">
               <Link to="/">
                 <span className="logo_text">
-                  <span>Crowd</span><span>Tour</span>
+                  <span>Profile</span><span>Me</span>
                 </span>
               </Link>
             </div>
