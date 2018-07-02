@@ -15,3 +15,21 @@ export function getAutoCompleteValue(input) {
   //   console.log("Main Google API", res);
   // })
 }
+
+export const createDeltaAction = (node, type) => ({
+  success: (data) => ({
+    type: `${node}/${type}/SUCCESS`,
+    data,
+  }),
+  failed: (data) => ({
+    type: `${node}/${type}/FAILED`,
+    data,
+  }),
+  request: (data) => ({
+    type: `${node}/${type}/REQUEST`,
+    data,
+  }),
+  SUCCESS: `${node}/${type}/SUCCESS`,
+  FAILED: `${node}/${type}/FAILED`,
+  REQUEST: `${node}/${type}/REQUEST`,
+})

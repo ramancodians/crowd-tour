@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Modal from 'react-awesome-modal';
 import firebase from "firebase"
+import LoginWithGoogleImg from "./../imgs/sign-in-with-google.png"
 
 export default class Examples extends Component {
   constructor(props) {
@@ -35,13 +36,15 @@ export default class Examples extends Component {
   }
 
   loginWithGoogle = () => {
+    const { storeGoogleAuthOject } = this.props
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth()
     .setPersistence(firebase.auth.Auth.Persistence.LOCAL)
     .then(() => {
       return firebase.auth().signInWithPopup(provider)
       .then((result) => {
-        console.log("success",result);
+        console.log("success",result)
+        storeGoogleAuthOject(result)
         this.props.closeModal()
       })
     })
@@ -51,9 +54,7 @@ export default class Examples extends Component {
   }
 
   render() {
-
     if(!this.props.visible) return null
-
     return (
       <Modal
         visible={this.props.visible}
@@ -65,8 +66,13 @@ export default class Examples extends Component {
         }}
       >
       <div className="login_modal">
-        <button onClick={this.loginWithFB}>Login with FB</button>
-        <button onClick={this.loginWithGoogle}>Login with Googlee</button>
+        <div className="text_wrap">
+          <h3>Just one</h3>
+          <h1>Step away.</h1>
+        </div>
+        <div className="login_wrap">
+          <img src={LoginWithGoogleImg} alt="Login with Google" onClick={this.loginWithGoogle}/>
+        </div>
       </div>
       </Modal>
     );

@@ -1,17 +1,10 @@
-import {
-  CONNECT_TO_FIREBASE,
-  CONNECT_TO_FIREBASE_FAILED,
-  CONNECT_TO_FIREBASE_SUCCESS
-} from "./consts"
+import { TOGGLE_LOGIN_MODAL } from "./consts"
+import { createDeltaAction } from "./../../shared/helpers"
 
-export const connectToFirebase = () => ({
-  type: CONNECT_TO_FIREBASE
+
+export const toggleLoginModal = (visible) => ({
+  type: TOGGLE_LOGIN_MODAL,
+  visible,
 })
 
-export const connecToFirebaseFailed = () => ({
-  type: CONNECT_TO_FIREBASE_FAILED
-})
-
-export const connecToFirebaseSuccess = () => ({
-  type: CONNECT_TO_FIREBASE_SUCCESS
-})
+export const storeGoogleAuthOject = createDeltaAction("AUTH", "STORE_GOOGLE_AUTH")

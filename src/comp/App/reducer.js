@@ -1,25 +1,21 @@
 import {
-  CONNECT_TO_FIREBASE,
-  CONNECT_TO_FIREBASE_FAILED,
-  CONNECT_TO_FIREBASE_SUCCESS,
+  TOGGLE_LOGIN_MODAL,
 } from "./consts"
 
 const initState = {
   connectedToFirebase: false,
+  isLoginModalOpen: false,
 }
 
 export default function appReucer(state = initState, action){
   switch (action.type) {
-    case CONNECT_TO_FIREBASE:
+    case TOGGLE_LOGIN_MODAL: {
+      const { isLoginModalOpen } = state
+      const { visible } = action
       return {
         ...state,
-        connectToFirebase: true,
+        isLoginModalOpen: visible || !isLoginModalOpen,
       }
-
-    case CONNECT_TO_FIREBASE_FAILED:
-    return {
-      ...state,
-      connectToFirebase: false,
     }
     default:
       return state

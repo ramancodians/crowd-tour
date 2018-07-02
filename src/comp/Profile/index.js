@@ -168,34 +168,24 @@ class Profile extends Component {
                 errorMessage={`Max length allowed ${MAX_BIO_LENGTH}`}
                 label="Tell you about you"/>
               { bio && <h6>{`${bio.length}/${MAX_BIO_LENGTH}`}</h6> }
-
-              <Channel name="Facebook">
-                <Text
-                  name="facebookProfile"
-                  value={facebookProfile}
-                  onChange={this.handleInput}
-                  placeholder="eg, https://facebook.com/ramanchoudhry"
-                  errorMessage={`Please Enter a Valid URL`}
-                  label="Facebook Profile URL"
-                />
-              </Channel>
-              <Channel name="Twitter">
-                <Text
-                  name="twitterHandler"
-                  value={twitterHandler}
-                  onChange={this.handleInput}
-                  placeholder="eg, https://facebook.com/ramanchoudhry"
-                  errorMessage={`Please Enter a Valid URL`}
-                  label="Twitter Handler"
-                />
-              </Channel>
+              <Text
+                name="facebookProfile"
+                value={facebookProfile}
+                onChange={this.handleInput}
+                placeholder="eg, https://facebook.com/ramanchoudhry"
+                errorMessage={`Please Enter a Valid URL`}
+                label="Facebook Profile URL"
+              />
+              <Text
+                name="twitterHandler"
+                value={twitterHandler}
+                onChange={this.handleInput}
+                placeholder="eg, https://twitter.com/ramanchoudhry"
+                errorMessage={`Please Enter a Valid URL`}
+                label="Twitter Handle"
+              />
               <button type="submit">Save</button>
             </form>
-          </div>
-          <div className="preview_wrap">
-            <pre>
-              {JSON.stringify(formValues, null, 4)}
-            </pre>
           </div>
         </div>
       </div>

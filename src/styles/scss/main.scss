@@ -3,59 +3,29 @@
 @import "./partials/loginModal";
 @import "./partials/newCampaign";
 @import "./partials/profile";
+@import "./partials/dashboard";
 //@import "./../../node_modules/font-awesome/scss/font-awesome.scss";
 
 body{
-  background: #EEE;
+  background: #f1f1f1;
 }
 
-*{
+* {
   box-sizing: border-box;
 }
 
 .app_header{
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,7db9e8+100&0.46+0,0+100 */
-background: -moz-linear-gradient(top, rgba(0,0,0,0.46) 0%, rgba(125,185,232,0) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, rgba(0,0,0,0.46) 0%,rgba(125,185,232,0) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom, rgba(0,0,0,0.46) 0%,rgba(125,185,232,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#75000000', endColorstr='#007db9e8',GradientType=0 ); /* IE6-9 */
+  background: -moz-linear-gradient(top, rgba(0,0,0,0.46) 0%, rgba(125,185,232,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0.46) 0%,rgba(125,185,232,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.46) 0%,rgba(125,185,232,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#75000000', endColorstr='#007db9e8',GradientType=0 ); /* IE6-9 */
   position: relative;
-  z-index: 10;
+  z-index: 99999;
 
   .root{
     display: flex;
     padding: 10px 0px;
-
-    .logo_wrap{
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-
-      a{
-        text-decoration: none;
-        font-weight: bold;
-      }
-
-      span.logo_text{
-        font-size: 30px;
-        font-weight: bold;
-        color: #FFF;
-        background: rgba($baseMain, 0.4);
-        padding: 8px 16px;
-        border: 2px solid $baseMain;
-        position: relative;
-
-
-        span{
-          &:nth-child(1){
-            //color: $baseMain;
-          }
-          &:nth-child(2){
-            //color: $baseSecond;
-          }
-        }
-      }
-    }
 
     nav{
       display: inline-flex;
@@ -144,12 +114,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#75000000', e
   top: -84px;
   .main_bg{
     position: relative;;
-    background: url("./../../imgs/bgs/4.jpg") center no-repeat;
+    background: url("./../../imgs/bgs/6.jpg") center no-repeat;
     background-size: cover;
     z-index: 5;
 
     &:after{
-      background: rgba(#000, 0.5);
+      background: rgba($baseSecond, 0.5);
       content: "";
       width: 100%;
       height: 100%;
@@ -162,7 +132,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#75000000', e
     .root{
       padding-top: 100px;
       color: #FFF;
-      padding-bottom: 100px;
+      padding-bottom: 150px;
 
       .hero_text{
         font-size: 50px;
@@ -189,12 +159,61 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#75000000', e
   }
 
   .features{
+    position: relative;
     .features_wrap{
       display: flex;
-      padding: 20px 0px;
+      padding: 20px;
+      position: relative;
+      top: -45px;
+      background: #fff;
+      z-index: 99;
+      border-radius: 5px;
+      flex-wrap: wrap;
+      flex-direction: column;
+
+      > h1 {
+        text-align: center;
+        color: $baseSecond;
+      }
 
       .feature{
         flex: 0 50%;
+        display: flex;
+
+        .text_wrap {
+          flex:1;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          padding: 50px;
+
+          h2 {
+            font-weight: normal;
+            color: $baseSecond;
+            margin-bottom: 0px;
+          }
+
+          p {
+            color: #555;
+            font-size: 16px;
+            line-height: 150%;
+            font-size: 16px;
+          }
+
+        }
+
+        .img_wrap {
+          flex:1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 50px;
+          img{
+            width: 100%;
+            max-width: 200px;
+          }
+        }
+
       }
     }
   }
@@ -310,17 +329,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#75000000', e
       }
     }
   }
-
-  button{
-    width: 120px;
-    height: 55px;
-    font-size: 18px;
-    color: #FFF;
-    background: $baseSecond;
-    border: none;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-  }
 }
 
 .new_campaign{
@@ -424,8 +432,36 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#75000000', e
 
 
 footer.app_footer{
+  background: #CCC;
+  padding-bottom: 150px;
+  padding-top: 50px;
   .root{
     display: flex;
     flex: 1 25%;
+
+    .logo-wrap{
+      padding: 20px;
+      padding-top: 35px;
+      display: flex;
+      flex-direction: column;
+      .logo_text{
+        font-size: 30px;
+      }
+    }
+
+    .link_list {
+      flex:1;
+      ul {
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+        li {
+          a {
+            text-decoration: none;
+            color: #999;
+          }
+        }
+      }
+    }
   }
 }

@@ -1,20 +1,26 @@
 import React, { Component } from "react"
-//import { browserHistory } from "react-router"
 import Container from "./container"
+import SetupImg from "./../../imgs/setup.png"
+import PushImg from "./../../imgs/push.png"
+import SocialImg from "./../../imgs/social.png"
 
 class HomePage extends Component{
 
   state = {}
 
   componentWillMount(){
-    this.props.getCampaigns();
+    const { history, firebase } = this.props
+    const { user } = firebase
+    if(user) {
+      history.push("/dashboard")
+    }
   }
 
   componentWillReceiveProps(newProps) {
     const { history, firebase } = newProps
     const { user } = firebase
     if(user) {
-      history.push("/profile")
+      history.push("/dashboard")
     }
   }
 
@@ -25,7 +31,7 @@ class HomePage extends Component{
   }
 
   render(){
-    const { searchLocations, home } = this.props
+    const { searchLocations, home, toggleLoginModal } = this.props
     const { locationImage } = this.state
     return(
       <div className="page home">
@@ -41,44 +47,57 @@ class HomePage extends Component{
                   Our simple interface increase the user engagement which
                   allows better convertion rate and happy customers.
                 </p>
+                <button
+                  className="main"
+                  onClick={toggleLoginModal}
+                >
+                  Create my Profile
+                </button>
               </div>
             </div>
           </div>
         </div>
         <div className="features">
           <div className="wrapper">
-            <h2>Features</h2>
-            <div className="features_wrap">
+            <div className="features_wrap mdl_shadow_active">
+              <h1>How ProfileMe can help you?</h1>
               <div className="feature">
-                <h2>Simple Integration</h2>
-                <p>
-                You don’t have to be a developer to use ProfileMe.
-                Our Simple Setup process gets Profile me on your site in minutes.
-                Yes! With zero programming skills.
-                </p>
+                 <div className="text_wrap">
+                   <h2>Simple Integration</h2>
+                   <p>
+                   You don’t have to be a developer to use ProfileMe.
+                   Our Simple Setup process gets Profile me on your site in minutes.
+                   Yes! With zero programming skills.
+                   </p>
+                 </div>
+                 <div className="img_wrap">
+                    <img src={SetupImg} alt="Easy setup"/>
+                 </div>
               </div>
               <div className="feature">
-                <h2>Messaging</h2>
-                <p>
-              ProfileMe makes customer feel home. Its all starts with a simple
-              greeting from our friendly bot. We makes it easier for the
-              customer to ask bot or yor for the content they’re looking.
-                </p>
+                <div className="img_wrap">
+                  <img src={PushImg} alt=""/>
+                </div>
+                <div className="text_wrap">
+                  <h2>Messaging</h2>
+                  <p>
+                    ProfileMe makes customer feel home. Its all starts with a simple
+                    greeting from our friendly bot. We makes it easier for the
+                    customer to ask bot or yor for the content they’re looking.
+                  </p>
+                </div>
               </div>
               <div className="feature">
-                <h2>Social Media</h2>
-                <p>
-                In the age of Social Media, ProfileMe makes it easier for
-                it easier to customers to share their experience on Social Media.
-                </p>
-              </div>
-              <div className="feature">
-                <h2>Simple Integration</h2>
-                <p>
-                You don’t have to be a developer to use ProfileMe.
-                Our Simple Setup process gets Profile me on your site in minutes.
-                Yes! With zero programming skills.
-                </p>
+                <div className="text_wrap">
+                  <h2>Social Media</h2>
+                  <p>
+                  In the age of Social Media, ProfileMe makes it easier for
+                  it easier to customers to share their experience on Social Media.
+                  </p>
+                </div>
+                <div className="img_wrap">
+                  <img src={SocialImg} alt=""/>
+                </div>
               </div>
             </div>
           </div>

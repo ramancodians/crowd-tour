@@ -1,12 +1,10 @@
 import React from "react"
 
-const Channel = ({ name, children, enabled}) => (
+const Channel = ({ name, children }) => (
   <div className="channel">
     <header>
       <h5>{name}</h5>
-      <input type="checkbox" checkbox={enabled}/>
     </header>
-
     {children}
   </div>
 )

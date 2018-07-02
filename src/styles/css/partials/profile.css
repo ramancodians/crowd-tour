@@ -1,40 +1,43 @@
-.profile .wrapper {
-  display: flex; }
-  .profile .wrapper .modal_creator {
-    background: #FFF;
-    padding: 20px;
-    border-radius: 4px;
-    flex: 1; }
-    .profile .wrapper .modal_creator .user_img_wrap {
-      text-align: center; }
-      .profile .wrapper .modal_creator .user_img_wrap .img_holder {
-        border-radius: 50%;
-        display: inline-block;
-        background: #CCC center no-repeat;
-        background-size: cover;
-        width: 140px;
-        height: 140px;
-        border: #CCC 3px solid;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column; }
-        .profile .wrapper .modal_creator .user_img_wrap .img_holder:hover {
-          cursor: pointer; }
-          .profile .wrapper .modal_creator .user_img_wrap .img_holder:hover > img, .profile .wrapper .modal_creator .user_img_wrap .img_holder:hover h6 {
-            opacity: 0.6; }
-        .profile .wrapper .modal_creator .user_img_wrap .img_holder > img {
-          width: 40px;
-          height: auto;
-          opacity: 0;
-          transition-duration: 0.3s; }
-        .profile .wrapper .modal_creator .user_img_wrap .img_holder > h6 {
-          opacity: 0;
-          transition-duration: 0.3s;
-          margin: 0px;
-          padding: 0px; }
-        .profile .wrapper .modal_creator .user_img_wrap .img_holder > input {
-          display: none; }
-  .profile .wrapper .preview_wrap {
-    padding: 10px;
-    flex: 1; }
+.profile {
+  margin-bottom: 100px; }
+  .profile .wrapper {
+    display: flex;
+    max-width: 600px; }
+    .profile .wrapper .modal_creator {
+      background: #FFF;
+      padding: 20px;
+      border-radius: 4px;
+      flex: 1; }
+      .profile .wrapper .modal_creator .user_img_wrap {
+        text-align: center; }
+        .profile .wrapper .modal_creator .user_img_wrap .img_holder {
+          border-radius: 50%;
+          display: inline-block;
+          background: #CCC center no-repeat;
+          background-size: cover;
+          width: 140px;
+          height: 140px;
+          border: #CCC 3px solid;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column; }
+          .profile .wrapper .modal_creator .user_img_wrap .img_holder:hover {
+            cursor: pointer; }
+            .profile .wrapper .modal_creator .user_img_wrap .img_holder:hover > img, .profile .wrapper .modal_creator .user_img_wrap .img_holder:hover h6 {
+              opacity: 0.6; }
+          .profile .wrapper .modal_creator .user_img_wrap .img_holder > img {
+            width: 40px;
+            height: auto;
+            opacity: 0;
+            transition-duration: 0.3s; }
+          .profile .wrapper .modal_creator .user_img_wrap .img_holder > h6 {
+            opacity: 0;
+            transition-duration: 0.3s;
+            margin: 0px;
+            padding: 0px; }
+          .profile .wrapper .modal_creator .user_img_wrap .img_holder > input {
+            display: none; }
+    .profile .wrapper .preview_wrap {
+      padding: 10px;
+      flex: 1; }

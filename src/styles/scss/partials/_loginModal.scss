@@ -1,7 +1,35 @@
 .login_modal{
-  padding: 20px;
   background: #FFF;
-  width: 100%;
-  display: block;
-  background: yellow;
+  width: 900px;
+  display: flex;
+  height: 60vh;
+  z-index: 999999;
+  position: relative;
+
+  .text_wrap {
+    flex:1;
+    background: $baseSecond;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    h1,h3{
+      margin: 0px;
+      padding: 0px;
+      color: #FFF;
+    }
+  }
+
+  .login_wrap {
+    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-width: 240px;
+      cursor: pointer;
+    }
+  }
 }

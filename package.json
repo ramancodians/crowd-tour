@@ -19,6 +19,7 @@
     "react-router-redux": "^4.0.8",
     "react-scripts": "1.1.1",
     "react-simple-dropdown": "^3.2.0",
+    "react-syntax-highlighter": "^7.0.4",
     "redux": "^3.7.2",
     "redux-form": "^7.2.3",
     "redux-logger": "^3.0.6",
@@ -34,7 +35,8 @@
     "build": "npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "styles-watch": "node-sass styles/scss -o styles/css --watch"
+    "styles-watch": "node-sass styles/scss -o styles/css --watch",
+    "profile-me-client": "npm run build && cd ./public && live-server"
   },
   "devDependencies": {
     "node-sass": "^4.7.2",

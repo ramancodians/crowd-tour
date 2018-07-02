@@ -1,8 +1,6 @@
 import { bindActionCreators } from "redux"
 import { connect } from "react-redux"
-import {
-  getCampaigns
-} from "./actions"
+import { toggleLoginModal } from "./../App/actions"
 
 function mapStateToProps(state){
   return {
@@ -13,7 +11,7 @@ function mapStateToProps(state){
 function mapDispatchToProps(dispatch){
   return {
     ...bindActionCreators({
-      getCampaigns,
+      toggleLoginModal,
     },dispatch)
   }
 }

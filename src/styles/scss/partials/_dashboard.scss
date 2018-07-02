@@ -1,0 +1,81 @@
+.dashboard {
+  position: relative;
+  margin-bottom: 50px;
+  .wrapper {
+     header {
+       background: #FFF;
+       padding: 12px;
+       border-radius: 4px;
+       margin-top: 14px;
+
+       > span {
+         color: $baseSecond;
+         font-weight: bold;
+         font-size: 16px;
+       }
+     }
+
+     .section_wrap {
+       display: flex;
+       margin-top: 16px;
+       aside {
+         width: calc(30% - 16px);
+         margin-right: 16px;
+         background: #FFF;
+         border-radius: 4px;
+       }
+
+       main {
+         border-radius: 4px;
+          width: calc(70%);
+          background: #FFF;
+       }
+     }
+  }
+}
+
+.no_dashboard {
+  padding: 20px;
+
+  h3 {
+    margin-top: 60px;
+
+    > span {
+      width: 40px;
+      height: 40px;
+      display: inline-block;
+      background: $baseSecond;
+      color: #FFF;
+      font-weight: bold;
+      padding-left: 15px;
+      padding-top: 10px;
+      border-radius: 50%;
+    }
+  }
+}
+
+.no_profile {
+  padding: 20px;
+  text-align: center;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h4 {
+    padding: 0px;
+    margin: 0px;
+    color: $warningColor;
+  }
+
+  a {
+    display: inline-block;
+    padding: 8px 16px;
+    background: $baseMain;
+    border-radius: 4px;
+    color: #FFF;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+}

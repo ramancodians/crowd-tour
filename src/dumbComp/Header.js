@@ -5,24 +5,7 @@ import firebase from "firebase"
 import LoginModal from "./LoginModal"
 import FirebaseAuthContainder from "./../comp/Firebase/container"
 import Dropdown, { DropdownTrigger, DropdownContent } from "react-simple-dropdown";
-
 class Header extends React.Component{
-
-  state = {
-    visible: false,
-  }
-
-  openModal = () => {
-      this.setState({
-          visible : true
-      });
-  }
-
-  closeModal= () => {
-      this.setState({
-          visible : false
-      });
-  }
 
   handleLinkClick = () => {
     this.refs.dropdown.hide();
@@ -38,19 +21,22 @@ class Header extends React.Component{
   }
 
   render(){
-    const { visible } = this.state
     const {
       userLogged,
       userLoggedOut,
       user,
+      isLoginModalOpen,
+      toggleLoginModal,
+      storeGoogleAuthOject,
     } = this.props
     return(
       <header className="app_header">
         <LoginModal
-          visible={visible}
-          closeModal={this.closeModal}
+          visible={isLoginModalOpen}
+          closeModal={() => { toggleLoginModal(false)}}
           userLoggedOut={userLoggedOut}
           userLogged={userLogged}
+          storeGoogleAuthOject={storeGoogleAuthOject}
         />
         <div className="wrapper">
           <div className="root">
@@ -65,14 +51,12 @@ class Header extends React.Component{
               { !user && <Link to="/success">Success Stories</Link> }
               { !user && <Link to="/about">About</Link> }
 
-              { user && <Link to="/campaign/new">
-                <button className="btn btn_create">Create Campaign</button>
-              </Link>}
+              { user && <Link to="/dashboard">Dashboard</Link> }
 
               {!user &&
                 <button
-                  className="btn_join"
-                  onClick={() => { this.openModal() }}
+                  className="btn_join main"
+                  onClick={() => { toggleLoginModal(true) }}
                 >
                   Sign In
                 </button>
@@ -95,11 +79,6 @@ class Header extends React.Component{
                       <li className="account-dropdown__link">
                         <a className="account-dropdown__link__anchor" href="#" onClick={this.handleLinkClick}>
                           Your profile
-                        </a>
-                      </li>
-                      <li className="account-dropdown__link">
-                        <a className="account-dropdown__link__anchor" href="#" onClick={this.handleLinkClick}>
-                          Your stars
                         </a>
                       </li>
                       <li className="account-dropdown__link">
